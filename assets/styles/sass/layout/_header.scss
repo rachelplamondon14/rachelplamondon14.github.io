@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+#header {
+	$white: rgba(white, .8);
+
+	height: 100vh;
+	min-height: 600px;
+	text-align: center;
+	background: url('../../images/20200911_130135.jpg') center center no-repeat;
+	background-size: cover;
+	position: relative;
+	@include flex(center, center, column);
+	@extend .p-4;
+
+	&:after {
+		@include pseudo();
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(color.scale($teal, $lightness: -25%), .85);
+	}
+
+	@include h(1) {
+		margin: 0;
+		font-weight: bold;
+
+		@include mq('sm') {
+			font-size: 3.2rem;
+		}
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-weight: lighter;
+		margin: 0;
+	}
+
+	hr {
+		background-color: $teal;
+		max-width: 300px;
+	}
+
+	.heading {
+		margin: auto;
+		color: $white;
+		position: relative;
+		z-index: +1;
+		@include flex(center, center, column);
+	}
+
+	nav#menu {
+		font-size: 1rem;
+		position: relative;
+		z-index: +1;
+		width: 100%;
+		
+		ul {
+			text-transform: uppercase;
+			@include reset-list();
+			@include flex(center, center, false, wrap);
+
+			li {
+				@extend .mx-2;
+
+				a {
+					color: color.scale($teal, $lightness: 40%);
+					text-decoration: none;
+
+					@include on-event {
+						text-decoration: none;
+						color: rgba($white, .6);
+					};
+				}
+			}
+		}
+	}
+}

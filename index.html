@@ -4,36 +4,93 @@
 <meta charset="utf-8">
 <title>Portfolio :: Rachel Plamondon</title>
 <meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,600i" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles/css/main.css">
+<script src="https://kit.fontawesome.com/b5e873c01e.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/general-functions.js"></script>
+<script src="assets/scripts/main.js"></script>
 </head>
 <body>
-<div class="container">
-<header id="header"><div class="wrapper">
-	<div class="logo"><a href="index.html"><img src="img/signature.png" alt="Rachel Plamondon"></a></div>
-	<div class="job-title">Front-End Web Developer and SEO Specialist</div>
+<header id="header">
+	<div class="heading">
+		<h1>Rachel Plamondon</h1>
+		<hr>
+		<h2>Web Developer</h2>
+	</div>
 	<nav id="menu">
 		<ul>
-			<li><a href="about.html">About</a></li>
-			<li><a href="portfolio.html">Portfolio</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
-</div></header>
-<div id="content"><div class="wrapper">
-	<p>Hey guys! I’m Rachel. It looks like you have come across my portfolio website.</p>
-	<p>First, I’m going to tell you a little bit about myself. My passion is web development, I can’t deny it! I have loved building websites since I was in high school. I started off with just basic knowledge of HTML and CSS (gotta love your first-ever websites that you created in HTML 4 with minimal styling) and gradually worked myself up to some pretty advanced skill sets with PHP and MySQL. I’ll let the <a href="portfolio.html">portfolio page</a> do most of the talking as far as this stuff goes, so please feel free to click around and look at some of my work!</p>
-	<p>And as always, don’t hesitate to <a href="contact.html">contact me</a> with any questions you may have while browsing. Have fun!</p>
-</div></div>
-<footer id="footer"><div class="wrapper">
-	<ul class="social-icons">
-		<li><a href="https://www.facebook.com/PlamondonR" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-		<li><a href="https://www.linkedin.com/in/rachel-plamondon-81a58387/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-	</ul>
-</div></footer>
+</header>
+<div id="content">
+	<section id="about" class="about">
+		<div class="container">
+			<h2>About Me</h2>
+			<div class="grid">
+				<div class="grid__col-4">
+					IMAGE
+				</div>
+				<div class="grid__col-4">
+					<h3>Hello!</h3>
+					<p>I love creating web applications! I have developed many different types of web-based software and countless WordPress websites. Please feel free to browse my <a href="#portfolio">portfolio</a> below.</p>
+					<ul class="social-icons inline-list">
+						<li><a href="https://www.facebook.com/PlamondonR" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/rachel-plamondon-81a58387/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+					</ul>
+				</div>
+				<div class="grid__col-4">
+					<h3>Personal Interests</h3>
+					<ul>
+						<li>On the weekends, you can usually find me <strong>on the trails with my adorable pup</strong>.</li>
+						<li>My favorite TV show is <strong>Friends</strong>.</li>
+						<li>I love to <strong>garden</strong> and grow many house plants.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="skills" class="skills alt">
+		<div class="container">
+			<h2>Technical Skills</h2>
+			<p>Blah blah blah</p>
+			<ul class="inline-list">
+				<li>PHP</li>
+				<li>MySQL</li>
+				<li>JavaScript</li>
+				<li>jQuery</li>
+				<li>React</li>
+				<li>SASS</li>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>OOP</li>
+				<li>Python</li>
+				<li>RESTful and SOAP APIs</li>
+				<li>WordPress</li>
+				<li>SEO</li>
+				<li>Git</li>
+				<li>Responsive web design</li>
+				<li>AWS</li>
+				<li>Photoshop</li>
+				<li>Illustrator</li>
+				<li>InDesign</li>
+			</ul>
+		</div>
+	</section>
+	<section id="projects" class="projects">
+		<div class="container">
+			<h2>Projects</h2>
+		</div>
+	</section>
+	<section id="contact" class="contact">
+		<div class="container">
+			<h2>Contact</h2>
+		</div>
+	</section>
 </div>
+<footer id="footer"></footer>
 </body>
 </html>

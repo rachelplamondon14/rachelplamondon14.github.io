@@ -1,0 +1,22 @@
+section {
+  @extend .py-10;
+}
+
+section {
+
+  h2 {
+    @include heading-underline();
+  }
+  
+  &.alt {
+    background-color: #eeeeee;
+  }
+  
+  &.skills {
+    @extend .text-center;
+
+    ul.inline-list {
+      @include flex(center, center);
+    }
+  }
+}

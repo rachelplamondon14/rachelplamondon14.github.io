@@ -1,0 +1,17 @@
+/// Flexbox grid layout
+/// @author thingsym
+/// @link https://thingsym.github.io/flexbox-grid-mixins/
+
+@use '../vendors/node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2%;
+
+.grid {
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through 12 {
+    .grid__col-#{$i} {
+      @include flexbox-grid-mixins.grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}

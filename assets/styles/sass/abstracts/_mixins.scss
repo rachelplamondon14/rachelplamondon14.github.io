@@ -1,0 +1,240 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Media queries
+/// @author Jamie Wright
+/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin mq($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+			$width: map_get($breakpoints, $width);
+			@if $type == max {
+					$width: $width - 1px;
+			}
+			@media only screen and (#{$type}-width: $width) {
+					@content;
+			}
+	}
+}
+
+/// Headings
+/// @author jmalatia
+/// @link https://codepen.io/jmalatia/pen/KVXEav
+@mixin headings($from: 1, $to: 6){
+	@for $i from $from through $to{
+		h#{$i}{
+			@content;
+		}
+	}
+}
+
+@mixin h($h) {
+	h#{$h}, .h#{$h} {
+		@content;
+	}
+}
+
+@mixin all-headings(){
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		@content;
+	}
+	@include headings-sizes-ms();
+}
+
+@mixin headings-sizes-ms() {
+	h1, .h1 {font-size: 2rem}
+	h2, .h2 {font-size: 1.8rem}
+	h3, .h3 {font-size: 1.4rem}
+	h4, .h4 {font-size: 1.2rem}
+	h5, .h5 {font-size: 1rem}
+	h6, .h6 {font-size: .8rem}
+}
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	} @else {
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+	#{$context} & {
+		@content;
+	}
+}
+
+/// Strip list of default browser styles
+/// @author sass-lang.com
+/// @link https://sass-lang.com/
+@mixin reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@mixin inline-list {
+	@include reset-list();
+	@include flex(false, false, false, wrap);
+
+	li {
+		@extend .mx-2;
+
+		&:first-child {
+			@extend .ml-0;
+		}
+		&:last-child {
+			@extend .mr-0;
+		}
+	}
+}
+
+/// Configuration for flexbox
+/// @author jordan
+/// @link https://www.dailysmarty.com/posts/streamlining-flexbox-calls-with-scss-mixins
+@mixin flex($align-items: false, $justify-content: false, $flex-direction: false, $flex-wrap: false, $flex: false) {
+	display: flex;
+	
+	@if $align-items != false {
+		align-items: $align-items;
+	}
+	
+	@if $justify-content != false {
+		justify-content: $justify-content;
+	}
+	
+	@if $flex-direction != false {
+		flex-direction: $flex-direction;
+	}
+	
+	@if $flex != false {
+		flex: $flex;
+	}
+	
+	@if $flex-wrap != false {
+		flex-wrap: $flex-wrap;
+	}
+}
+
+/// Margins & Paddings
+/// @author XanderLuciano
+/// @link https://gist.github.com/XanderLuciano/69d6f2408c0e1648f93e342cde77754d
+@mixin margins-paddings {
+  $spacings: (
+          0,
+          .25rem,
+          .5rem,
+          1rem,
+          1.5rem,
+          2rem,
+					2.25rem,
+					2.5rem,
+					3rem,
+					3.25rem,
+					3.5rem,
+					4rem,
+  ) !default;
+
+  // margin and padding shorthand prefixes
+  $prefixes: (
+          p  : padding,
+          px : (padding-left, padding-right),
+          py : (padding-top, padding-bottom),
+
+          pt : padding-top,
+          pr : padding-right,
+          pb : padding-bottom,
+          pl : padding-left,
+
+          m  : margin,
+          mx : (margin-left, margin-right),
+          my : (margin-top, margin-bottom),
+
+          mt : margin-top,
+          mr : margin-right,
+          mb : margin-bottom,
+          ml : margin-left,
+  ) !default;
+
+  // Loop generating all spacing styles
+  @each $attr-short, $attr-list in $prefixes {
+    @each $space in $spacings {
+      .#{$attr-short}-#{ index(($spacings), $space)-1 } {
+        @each $attr in $attr-list {
+          #{$attr}: #{$space} !important;
+        }
+      }
+    }
+  }
+}
+
+/// Text alignment
+@mixin text-align {
+	$text-align-map: (
+		center,
+		left,
+		right,
+	);
+	@each $value in $text-align-map {
+		.text-#{$value} {
+			text-align: $value;
+		}
+	}
+}
+
+/// Pseudo creation
+/// @author Jamie Wright
+/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+/// Placeholder input styles
+/// @author Jamie Wright
+/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+@mixin hr {
+	border-radius: 10px;
+	background-color: black;
+	width: 100%;
+	border: 0;
+	height: 1px;
+}
+
+@mixin heading-underline {
+	&:after {
+		@include pseudo();
+		@include hr();
+		position: relative;
+		background-color: $teal;
+		/* height: 1px;
+		width: 100%;
+		border-radius: 10px; */
+	}
+}
