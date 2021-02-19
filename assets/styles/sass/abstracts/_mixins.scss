@@ -138,18 +138,24 @@
 /// @link https://gist.github.com/XanderLuciano/69d6f2408c0e1648f93e342cde77754d
 @mixin margins-paddings {
   $spacings: (
-          0,
-          .25rem,
-          .5rem,
-          1rem,
-          1.5rem,
-          2rem,
-					2.25rem,
-					2.5rem,
-					3rem,
-					3.25rem,
-					3.5rem,
-					4rem,
+		auto : auto,
+		0 : 0,
+		1 : .25rem,
+		2 : .5rem,
+		3 : .75rem,
+		4 : 1rem,
+		5 : 1.25rem,
+		6 : 1.5rem,
+		7 : 1.75rem,
+		8 : 2rem,
+		9 : 2.25rem,
+		10 : 2.5rem,
+		11 : 2.75rem,
+		12 : 3rem,
+		13 : 3.25rem,
+		14 : 3.5rem,
+		15 : 3.75rem,
+		16 : 4rem,
   ) !default;
 
   // margin and padding shorthand prefixes
@@ -175,8 +181,8 @@
 
   // Loop generating all spacing styles
   @each $attr-short, $attr-list in $prefixes {
-    @each $space in $spacings {
-      .#{$attr-short}-#{ index(($spacings), $space)-1 } {
+    @each $i, $space in $spacings {
+      .#{$attr-short}-#{$i} {
         @each $attr in $attr-list {
           #{$attr}: #{$space} !important;
         }
@@ -195,6 +201,25 @@
 	@each $value in $text-align-map {
 		.text-#{$value} {
 			text-align: $value;
+		}
+	}
+}
+
+/// Font size scaling
+@mixin font-size-scale() {
+	$font-size-map: (
+		xxs : xx-small,
+		xs : x-small,
+		s : small,
+		m : medium, //default
+		l : large,
+		xl : x-large,
+		xxl : xx-large,
+		xxxl : xxx-large,
+	);
+  @each $prefix, $value in $font-size-map {
+		.fs-#{$prefix}{
+			font-size: #{$value};
 		}
 	}
 }
@@ -219,22 +244,28 @@
 	&::-webkit-input-placeholder { @content; }
 }
 
+/// Horizontal rule styles
 @mixin hr {
 	border-radius: 10px;
 	background-color: black;
 	width: 100%;
 	border: 0;
-	height: 1px;
+	height: 1.5px;
+	max-width: 300px;
+	@extend .mx-auto;
+	@extend .my-2;
 }
 
+/// Underline heading
 @mixin heading-underline {
-	&:after {
-		@include pseudo();
-		@include hr();
-		position: relative;
-		background-color: $teal;
-		/* height: 1px;
-		width: 100%;
-		border-radius: 10px; */
+	& {
+		@extend .text-center;
+
+		&::after {
+			@include pseudo();
+			@include hr();
+			position: relative;
+			background-color: $teal;
+		}
 	}
 }

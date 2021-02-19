@@ -67,6 +67,12 @@
 
 
 /**
+ * Include font size scaling
+ */
+@include font-size-scale();
+
+
+/**
  * Lists
  */
 ul.inline-list {

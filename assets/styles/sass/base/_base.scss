@@ -5,7 +5,7 @@
 /**
  * Set up a decent box model on the root element
  */
-* {
+html {
   box-sizing: border-box;
 }
 
@@ -19,6 +19,14 @@
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+/**
+ * Make images responsive
+ */
+img {
+  max-width: 100%;
+  max-height: auto;
 }
 
 /**
@@ -61,4 +69,5 @@ hr {
  */
 ul.social-icons {
   font-size: 1.8rem;
+  @extend .my-2;
 }
