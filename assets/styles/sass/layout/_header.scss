@@ -8,7 +8,7 @@
 	height: 100vh;
 	min-height: 600px;
 	text-align: center;
-	background: url('../../images/20200911_130135.jpg') center center no-repeat;
+	background: url('../../images/lake-of-the-clouds.jpg') center center no-repeat;
 	background-size: cover;
 	position: relative;
 	@include flex(center, center, column);
@@ -41,7 +41,6 @@
 
 	hr {
 		background-color: $teal;
-		max-width: 300px;
 	}
 
 	.heading {

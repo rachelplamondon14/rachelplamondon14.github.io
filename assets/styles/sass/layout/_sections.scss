@@ -6,10 +6,17 @@ section {
 
   h2 {
     @include heading-underline();
+    @extend .mb-5;
+
+    &:after {
+      background-color: $salmon;
+    }
   }
   
   &.alt {
     background-color: #eeeeee;
+    border-top: 2px solid #dadada;
+    border-bottom: 2px solid #dadada;
   }
   
   &.skills {
@@ -17,6 +24,21 @@ section {
 
     ul.inline-list {
       @include flex(center, center);
+      @extend .mt-8;
+      @extend .ml-auto;
+      @extend .mr-auto;
+      max-width: 900px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &.contact {
+    @extend .fs-xl;
+    @extend .text-center;
+
+    a {
+      text-decoration: none;
     }
   }
 }
