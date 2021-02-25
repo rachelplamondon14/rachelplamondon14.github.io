@@ -1605,34 +1605,194 @@ body {
   font-size: xx-small;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-xxs {
+    font-size: xx-small;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-xxs {
+    font-size: xx-small;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-xxs {
+    font-size: xx-small;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-xxs {
+    font-size: xx-small;
+  }
+}
 .fs-xs {
   font-size: x-small;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-xs {
+    font-size: x-small;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-xs {
+    font-size: x-small;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-xs {
+    font-size: x-small;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-xs {
+    font-size: x-small;
+  }
+}
 .fs-s {
   font-size: small;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-s {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-s {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-s {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-s {
+    font-size: small;
+  }
+}
 .fs-m {
   font-size: medium;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-m {
+    font-size: medium;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-m {
+    font-size: medium;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-m {
+    font-size: medium;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-m {
+    font-size: medium;
+  }
+}
 .fs-l {
   font-size: large;
 }
 
-.fs-xl, section.contact {
+@media only screen and (min-width: 320px) {
+  .fs-xs-l {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-l {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-l {
+    font-size: large;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-l {
+    font-size: large;
+  }
+}
+.fs-xl {
   font-size: x-large;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-xl {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-xl, section.contact {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-xl {
+    font-size: x-large;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-xl {
+    font-size: x-large;
+  }
+}
 .fs-xxl {
   font-size: xx-large;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-xxl {
+    font-size: xx-large;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-xxl {
+    font-size: xx-large;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-xxl {
+    font-size: xx-large;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-xxl {
+    font-size: xx-large;
+  }
+}
 .fs-xxxl {
   font-size: xxx-large;
 }
 
+@media only screen and (min-width: 320px) {
+  .fs-xs-xxxl {
+    font-size: xxx-large;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .fs-sm-xxxl {
+    font-size: xxx-large;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .fs-md-xxxl {
+    font-size: xxx-large;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .fs-lg-xxxl {
+    font-size: xxx-large;
+  }
+}
 /**
  * Lists
  */

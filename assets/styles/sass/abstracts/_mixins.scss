@@ -7,48 +7,30 @@
 /// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
 @mixin mq($width, $type: min) {
 	@if map_has_key($breakpoints, $width) {
-			$width: map_get($breakpoints, $width);
-			@if $type == max {
-					$width: $width - 1px;
-			}
-			@media only screen and (#{$type}-width: $width) {
-					@content;
-			}
-	}
-}
-
-/// Headings
-/// @author jmalatia
-/// @link https://codepen.io/jmalatia/pen/KVXEav
-@mixin headings($from: 1, $to: 6){
-	@for $i from $from through $to{
-		h#{$i}{
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
 			@content;
 		}
 	}
 }
 
-@mixin h($h) {
-	h#{$h}, .h#{$h} {
-		@content;
+/// Automatically include breakpoints in class names given
+@mixin responsify($prefix, $property, $key, $value) {
+	//Include initial property
+	.#{$prefix}-#{$key} {
+		#{$property}: #{$value};
 	}
-}
-
-@mixin all-headings(){
-	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6 {
-		@content;
+	//Include breakpoints
+	@each $break-prefix, $width in $breakpoints {
+		@include mq($break-prefix) {
+			.#{$prefix}-#{$break-prefix}-#{$key} {
+				#{$property}: #{$value};
+			}
+		}
 	}
-	@include headings-sizes-ms();
-}
-
-@mixin headings-sizes-ms() {
-	h1, .h1 {font-size: 2rem}
-	h2, .h2 {font-size: 1.8rem}
-	h3, .h3 {font-size: 1.4rem}
-	h4, .h4 {font-size: 1.2rem}
-	h5, .h5 {font-size: 1rem}
-	h6, .h6 {font-size: .8rem}
 }
 
 /// Event wrapper
@@ -79,6 +61,26 @@
 	#{$context} & {
 		@content;
 	}
+}
+
+/// Pseudo creation
+/// @author Jamie Wright
+/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+/// Placeholder input styles
+/// @author Jamie Wright
+/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
 }
 
 /// Strip list of default browser styles
@@ -130,6 +132,54 @@
 	
 	@if $flex-wrap != false {
 		flex-wrap: $flex-wrap;
+	}
+}
+
+/// Headings
+/// @author jmalatia
+/// @link https://codepen.io/jmalatia/pen/KVXEav
+@mixin headings($from: 1, $to: 6){
+	@for $i from $from through $to{
+		h#{$i}{
+			@content;
+		}
+	}
+}
+
+@mixin h($h) {
+	h#{$h}, .h#{$h} {
+		@content;
+	}
+}
+
+@mixin all-headings(){
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		@content;
+	}
+	@include headings-sizes-ms();
+}
+
+@mixin headings-sizes-ms() {
+	h1, .h1 {font-size: 2rem}
+	h2, .h2 {font-size: 1.8rem}
+	h3, .h3 {font-size: 1.4rem}
+	h4, .h4 {font-size: 1.2rem}
+	h5, .h5 {font-size: 1rem}
+	h6, .h6 {font-size: .8rem}
+}
+
+/// Underline heading
+@mixin heading-underline {
+	& {
+		@extend .text-center;
+
+		&::after {
+			@include pseudo();
+			@include hr();
+			position: relative;
+			background-color: $teal;
+		}
 	}
 }
 
@@ -217,31 +267,9 @@
 		xxl : xx-large,
 		xxxl : xxx-large,
 	);
-  @each $prefix, $value in $font-size-map {
-		.fs-#{$prefix}{
-			font-size: #{$value};
-		}
+  @each $fs, $value in $font-size-map {
+		@include responsify('fs', 'font-size', $fs, $value);
 	}
-}
-
-/// Pseudo creation
-/// @author Jamie Wright
-/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
-	content: $content;
-	display: $display;
-	position: $pos;
-}
-
-/// Placeholder input styles
-/// @author Jamie Wright
-/// @link https://engageinteractive.co.uk/blog/top-10-scss-mixins
-@mixin input-placeholder {
-	&.placeholder { @content; }
-	&:-moz-placeholder { @content; }
-	&::-moz-placeholder { @content; }
-	&:-ms-input-placeholder { @content; }
-	&::-webkit-input-placeholder { @content; }
 }
 
 /// Horizontal rule styles
@@ -254,18 +282,4 @@
 	max-width: 300px;
 	@extend .mx-auto;
 	@extend .my-2;
-}
-
-/// Underline heading
-@mixin heading-underline {
-	& {
-		@extend .text-center;
-
-		&::after {
-			@include pseudo();
-			@include hr();
-			position: relative;
-			background-color: $teal;
-		}
-	}
 }
