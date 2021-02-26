@@ -12,7 +12,6 @@
 	background-size: cover;
 	position: relative;
 	@include flex(center, center, column);
-	@extend .p-4;
 
 	&:after {
 		@include pseudo();
@@ -49,24 +48,40 @@
 		position: relative;
 		z-index: +1;
 		@include flex(center, center, column);
+		@extend .p-4;
 	}
 
 	nav#menu {
 		font-size: 1rem;
-		position: relative;
 		z-index: +1;
 		width: 100%;
+		background-color: rgba($teal, .6);
+
+		&.sticky {
+			position: fixed;
+			top: 0;
+			background-color: rgba($teal, .92);
+
+			a {
+				color: rgba(white, .8);;
+			}
+		}
+
+		* {
+			transition: all ease-in-out 200ms;
+		}
 		
 		ul {
 			text-transform: uppercase;
 			@include reset-list();
 			@include flex(center, center, false, wrap);
+			@extend .p-3;
 
 			li {
 				@extend .mx-2;
 
 				a {
-					color: color.scale($teal, $lightness: 40%);
+					color: color.scale($teal, $lightness: 45%);
 					text-decoration: none;
 
 					@include on-event {

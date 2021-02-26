@@ -534,11 +534,11 @@ body {
   padding: 0.5rem !important;
 }
 
-.p-3 {
+.p-3, #header nav#menu ul {
   padding: 0.75rem !important;
 }
 
-.p-4, #header {
+.p-4, #header .heading {
   padding: 1rem !important;
 }
 
@@ -2979,9 +2979,20 @@ ul.inline-list {
 }
 #header nav#menu {
   font-size: 1rem;
-  position: relative;
   z-index: 1;
   width: 100%;
+  background-color: rgba(44, 115, 145, 0.6);
+}
+#header nav#menu.sticky {
+  position: fixed;
+  top: 0;
+  background-color: rgba(44, 115, 145, 0.92);
+}
+#header nav#menu.sticky a {
+  color: rgba(255, 255, 255, 0.8);
+}
+#header nav#menu * {
+  transition: all ease-in-out 200ms;
 }
 #header nav#menu ul {
   text-transform: uppercase;
@@ -2994,7 +3005,7 @@ ul.inline-list {
   flex-wrap: wrap;
 }
 #header nav#menu ul li a {
-  color: #6bb4d2;
+  color: #78bad6;
   text-decoration: none;
 }
 #header nav#menu ul li a:hover, #header nav#menu ul li a:active, #header nav#menu ul li a:focus {
