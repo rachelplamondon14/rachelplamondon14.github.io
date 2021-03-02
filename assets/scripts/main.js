@@ -19,9 +19,13 @@ class Sticky {
 	}
 	stick() {
 		this.element.classList.add("sticky");
+		this.element.style.position = 'fixed';
+		this.element.style.top = 0;
 	}
 	unStick() {
 		this.element.classList.remove("sticky");
+		this.element.style.position = 'static';
+		this.element.style.top = '';
 	}
 }
 
