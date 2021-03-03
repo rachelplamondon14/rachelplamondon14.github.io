@@ -272,6 +272,16 @@
 	}
 }
 
+/// Display
+@mixin display-values() {
+	$display-map: (
+		none : none,
+	);
+  @each $d, $value in $display-map {
+		@include responsify('d', 'display', $d, $value);
+	}
+}
+
 /// Horizontal rule styles
 @mixin hr {
 	border-radius: 10px;

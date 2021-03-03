@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="assets/scripts/vendor/node_modules/lightbox2/src/css/lightbox.css" rel="stylesheet" />
+<script src="assets/scripts/vendor/node_modules/lightbox2/src/js/lightbox.js"></script>
+
 <script src="assets/scripts/main.js"></script>
 </head>
 <body>
@@ -22,8 +25,8 @@
 	<nav id="menu">
 		<ul>
 			<li><a href="#about">About</a></li>
-			<li><a href="#portfolio">Portfolio</a></li>
 			<li><a href="#skills">Skills</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
 			<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
@@ -59,7 +62,7 @@
 	<section name="skills" class="skills alt">
 		<div class="container">
 			<h2>Technical Skills</h2>
-			<p>I have worked with a variety of programming languages. Most of my projects are written with the LAMP stack, paired with jQuery for the front end functionality. I have dabbled in Python and React for some personal development.</p>
+			<p>I work with a variety of programming languages. Most of my projects are written with the LAMP stack, paired with jQuery for the front end functionality. I have dabbled in Python and React for some personal development.</p>
 			<ul class="inline-list">
 				<li>PHP</li>
 				<li>MySQL</li>
@@ -83,15 +86,92 @@
 			</ul>
 		</div>
 	</section>
-	<section name="portfolio" class="projects">
+	<section name="portfolio" class="portfolio">
 		<div class="container">
 			<h2>Projects</h2>
 			<ul class="project-list">
-				<li>Product Reviews Feature</li>
-				<li>Weekly Ad Carousel</li>
-				<li>Product Page Design & Implementation</li>
-				<li>Product Data Feed Infrastructure</li>
-				<li>Custom WordPress websites</li>
+				<li>
+					<a href="assets/images/projects/product-reviews.jpg" data-lightbox="product-reviews" data-title="Product reviews widget for end user">
+						<img src="assets/images/projects/product-reviews-thumb.jpg" alt="Product reviews widget for end user">
+						<p class="caption">Product Reviews Feature</p>
+					</a>
+					<a href="assets/images/projects/product-reviews-admin.jpg" data-lightbox="product-reviews" data-title="Product reviews admin panel" class="d-none">
+						<img src="assets/images/projects/product-reviews-thumb.jpg" alt="Product reviews admin panel">
+						<p class="caption">Product Reviews Feature</p>
+					</a>
+				</li>
+				<li>
+					<a href="assets/images/projects/ad-carousel-1.jpg" data-lightbox="ad-carousel" data-title="Ad Carousel cover">
+						<img src="assets/images/projects/ad-carousel-thumb.jpg" alt="Ad Carousel">
+						<p class="caption">Weekly Ad Carousel</p>
+					</a>
+					<a href="assets/images/projects/ad-carousel-2.jpg" data-lightbox="ad-carousel" data-title="Ad Carousel with page flip animation" class="d-none">
+						<img src="assets/images/projects/ad-carousel-thumb.jpg" alt="Ad Carousel">
+						<p class="caption">Weekly Ad Carousel</p>
+					</a>
+				</li>
+				<li>
+					<a href="assets/images/projects/product-page-redesign-1.jpg" data-lightbox="product-page-design" data-title="Product page redesign and implementation (page 1)">
+						<img src="assets/images/projects/product-page-redesign-thumb.jpg" alt="Product Page Design & Implementation">
+						<p class="caption">Product Page Design & Implementation</p>
+					</a>
+					<a href="assets/images/projects/product-page-redesign-2.jpg" data-lightbox="product-page-design" data-title="Product page redesign and implementation (page 2)" class="d-none">
+						<img src="assets/images/projects/product-page-redesign-thumb.jpg" alt="Product Page Design & Implementation">
+						<p class="caption">Product Page Design & Implementation</p>
+					</a>
+					<a href="assets/images/projects/product-page-redesign-3.jpg" data-lightbox="product-page-design" data-title="Product page redesign and implementation (page 3)" class="d-none">
+						<img src="assets/images/projects/product-page-redesign-thumb.jpg" alt="Product Page Design & Implementation">
+						<p class="caption">Product Page Design & Implementation</p>
+					</a>
+				</li>
+				<!-- <li>
+					<a href="assets/images/projects/product-data-feeds.jpg" data-lightbox="product-data-feeds" data-title="Product data feed design & development">
+						<img src="assets/images/projects/product-data-feeds-thumb.jpg" alt="Product Data Feed Infrastructure">
+						<p class="caption">Product Data Feed Infrastructure</p>
+					</a>
+				</li> -->
+				<li>
+					<a href="assets/images/projects/wordpress-prairie-gardens-1.jpg" data-lightbox="prairie-gardens" data-title="Prairie Gardens - Custom WordPress Website (page 1)">
+						<img src="assets/images/projects/wordpress-prairie-gardens-thumb.jpg" alt="Prairie Gardens - Custom WordPress Website">
+						<p class="caption">Prairie Gardens - Custom WordPress Website</p>
+					</a>
+					<a href="assets/images/projects/wordpress-prairie-gardens-2.jpg" data-lightbox="prairie-gardens" data-title="Prairie Gardens - Custom WordPress Website (page 2)" class="d-none">
+						<img src="assets/images/projects/wordpress-prairie-gardens-thumb.jpg" alt="Prairie Gardens - Custom WordPress Website">
+						<p class="caption">Prairie Gardens - Custom WordPress Website</p>
+					</a>
+					<a href="assets/images/projects/wordpress-prairie-gardens-3.jpg" data-lightbox="prairie-gardens" data-title="Prairie Gardens - Custom WordPress Website (page 3)" class="d-none">
+						<img src="assets/images/projects/wordpress-prairie-gardens-thumb.jpg" alt="Prairie Gardens - Custom WordPress Website">
+						<p class="caption">Prairie Gardens - Custom WordPress Website</p>
+					</a>
+					<a href="assets/images/projects/wordpress-prairie-gardens-4.jpg" data-lightbox="prairie-gardens" data-title="Prairie Gardens - Custom WordPress Website (page 4)" class="d-none">
+						<img src="assets/images/projects/wordpress-websites-thumb.jpg" alt="Custom WordPress Websites">
+						<p class="caption">Prairie Gardens - Custom WordPress Website</p>
+					</a>
+				</li>
+				<li>
+					<a href="assets/images/projects/wordpress-great-northern-cannabis-1.jpg" data-lightbox="great-northern-cannabis" data-title="Great Northern Cannabis - Custom WordPress Website (page 1)">
+						<img src="assets/images/projects/wordpress-great-northern-cannabis-thumb.jpg" alt="Great Northern Cannabis - Custom WordPress Website">
+						<p class="caption">Great Northern Cannabis - Custom WordPress Website</p>
+					</a>
+					<a href="assets/images/projects/wordpress-great-northern-cannabis-2.jpg" data-lightbox="great-northern-cannabis" data-title="Great Northern Cannabis - Custom WordPress Website (page 2)" class="d-none">
+						<img src="assets/images/projects/wordpress-great-northern-cannabis-thumb.jpg" alt="Great Northern Cannabis - Custom WordPress Website">
+						<p class="caption">Great Northern Cannabis - Custom WordPress Website</p>
+					</a>
+					<a href="assets/images/projects/wordpress-great-northern-cannabis-3.jpg" data-lightbox="great-northern-cannabis" data-title="Great Northern Cannabis - Custom WordPress Website (page 3)" class="d-none">
+						<img src="assets/images/projects/wordpress-great-northern-cannabis-thumb.jpg" alt="Great Northern Cannabis - Custom WordPress Website">
+						<p class="caption">Great Northern Cannabis - Custom WordPress Website</p>
+					</a>
+				</li>
+				<li>
+					<a href="assets/images/projects/wordpress-altitude-chiropractic-1.jpg" data-lightbox="altitude-chiropractic" data-title="Altitude Chiropractic - Custom WordPress Website (page 1)">
+						<img src="assets/images/projects/wordpress-altitude-chiropractic-thumb.jpg" alt="Altitude Chiropractic - Custom WordPress Website">
+						<p class="caption">Altitude Chiropractic - Custom WordPress Website</p>
+					</a>
+					<a href="assets/images/projects/wordpress-altitude-chiropractic-2.jpg" data-lightbox="altitude-chiropractic" data-title="Altitude Chiropractic - Custom WordPress Website (page 2)" class="d-none">
+						<img src="assets/images/projects/wordpress-altitude-chiropractic-thumb.jpg" alt="Altitude Chiropractic - Custom WordPress Website">
+						<p class="caption">Altitude Chiropractic - Custom WordPress Website</p>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</section>

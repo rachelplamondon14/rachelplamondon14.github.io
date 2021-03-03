@@ -33,6 +33,38 @@ section {
     }
   }
 
+  &.portfolio {
+
+    ul.project-list {
+      @extend .inline-list;
+      @extend .text-center;
+      @extend .fs-s;
+      justify-content: center;
+
+      li {
+        @extend .p-1;
+        border-radius: 100%;
+        flex-basis: 20%;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+
+          &:hover {
+            p {
+              color: $teal;
+            }
+          }
+        }
+
+        img {
+          border-radius: 100%;
+          box-shadow: 0 0 5px #cdcdcd;
+        }
+      }
+    }
+  }
+
   &.contact {
     @extend .fs-sm-xl;
     @extend .text-center;
