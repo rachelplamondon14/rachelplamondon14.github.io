@@ -3087,8 +3087,15 @@ section.portfolio ul.project-list li a {
   color: inherit;
   text-decoration: none;
 }
+section.portfolio ul.project-list li a img {
+  transition: all 200ms ease-in-out;
+  border: 3px solid white;
+}
 section.portfolio ul.project-list li a:hover p {
   color: #2C7391;
+}
+section.portfolio ul.project-list li a:hover img {
+  border-color: #2C7391;
 }
 section.portfolio ul.project-list li img {
   border-radius: 100%;
