@@ -3081,7 +3081,7 @@ section.portfolio ul.project-list {
 }
 section.portfolio ul.project-list li {
   border-radius: 100%;
-  flex-basis: 20%;
+  flex-basis: 18%;
 }
 section.portfolio ul.project-list li a {
   color: inherit;
