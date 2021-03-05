@@ -3095,7 +3095,7 @@ section.portfolio ul.project-list li a:hover p {
   color: #2C7391;
 }
 section.portfolio ul.project-list li a:hover img {
-  border-color: #2C7391;
+  border-color: rgba(44, 115, 145, 0.7);
 }
 section.portfolio ul.project-list li img {
   border-radius: 100%;
