@@ -33,8 +33,9 @@ $(document).ready(function() {
 
 	//Smooth anchor scrolling
 	$('a[href^="#"]').click(function () {
+		let navHeight = $('nav#menu').height();
 		$('html, body').animate({
-				scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+				scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - navHeight
 		}, 500);
 		return false;
 	});
