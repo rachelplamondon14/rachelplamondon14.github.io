@@ -88,6 +88,17 @@
 			li {
 				@extend .mx-2;
 
+				&.active {
+
+					a {
+						color: $sunshine;
+
+						@include on-event() {
+							color: $sunshine !important;
+						}
+					}
+				}
+
 				a {
 					color: color.scale($teal, $lightness: 45%);
 					text-decoration: none;

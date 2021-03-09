@@ -29,16 +29,50 @@ class Sticky {
 	}
 }
 
+class NavScrolling {
+	constructor(element) {
+		this.element = element;
+		this.nav = $('nav#menu');
+	}
+	init() {
+		this.handleEvents();
+	}
+	handleEvents() {
+		let self = this;
+		//Smooth anchor scrolling
+		$('a[href^="#"]').click(function () {
+			$('html, body').animate({
+				scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - self.nav.height()
+			}, 500);
+			return false;
+		});
+		//On scroll
+		document.onscroll = function(){
+			self.onScroll();
+		}
+	}
+	onScroll() {
+		let self = this;
+		let scrollPos = $(document).scrollTop();
+    $(this.element).find('li').each(function () {
+			let currentLink = $(this);
+			let refElement = $('[name=' + currentLink.find('a').attr("href").replace('#', '') + ']');
+			let elementTop = refElement.position().top - self.nav.height() - 5;
+			if(elementTop <= scrollPos && elementTop + refElement.height() > scrollPos) {
+				$(self.element).find('li').removeClass("active");
+				currentLink.addClass("active");
+			} else {
+				currentLink.removeClass("active");
+			}
+    });
+	}
+}
+
 $(document).ready(function() {
 
-	//Smooth anchor scrolling
-	$('a[href^="#"]').click(function () {
-		let navHeight = $('nav#menu').height();
-		$('html, body').animate({
-				scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - navHeight
-		}, 500);
-		return false;
-	});
+	//Handle navigation scrolling
+	const navScrolling = new NavScrolling(document.getElementById("menu"));
+	navScrolling.init();
 
 	//Stick-ify navigation
 	const stickyNav = new Sticky(document.getElementById("menu"));

@@ -77,6 +77,8 @@ section {
   &.contact {
     @extend .fs-sm-xl;
     @extend .text-center;
+		@include flex(center, center, column);
+		height: calc(100vh - 45px);
 
     a {
       text-decoration: none;
