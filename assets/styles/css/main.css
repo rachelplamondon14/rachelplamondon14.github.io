@@ -3038,11 +3038,9 @@ ul.inline-list, section.portfolio ul.project-list {
   justify-content: center;
   flex-wrap: wrap;
 }
-#header nav#menu ul li.active a {
-  color: #DEB22C;
-}
-#header nav#menu ul li.active a:hover, #header nav#menu ul li.active a:active, #header nav#menu ul li.active a:focus {
-  color: #DEB22C !important;
+#header nav#menu ul li.active a:after {
+  background-color: #dfb32c;
+  width: 100%;
 }
 #header nav#menu ul li a {
   color: #78bad6;
@@ -3051,6 +3049,14 @@ ul.inline-list, section.portfolio ul.project-list {
 #header nav#menu ul li a:hover, #header nav#menu ul li a:active, #header nav#menu ul li a:focus {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
+}
+#header nav#menu ul li a:after {
+  content: "";
+  display: block;
+  position: static;
+  transition: 200ms all ease-in-out;
+  width: 0;
+  height: 2px;
 }
 
 section h2::after {

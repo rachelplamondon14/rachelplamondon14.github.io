@@ -91,10 +91,10 @@
 				&.active {
 
 					a {
-						color: $sunshine;
-
-						@include on-event() {
-							color: $sunshine !important;
+						
+						&:after {
+							background-color: $sunshine;
+							width: 100%;
 						}
 					}
 				}
@@ -106,7 +106,14 @@
 					@include on-event {
 						text-decoration: none;
 						color: rgba($white, .6);
-					};
+					}
+
+					&:after {
+						@include pseudo(block, static);
+						transition: 200ms all ease-in-out;
+						width: 0;
+						height: 2px;
+					}
 				}
 			}
 		}
