@@ -3074,6 +3074,13 @@ section.alt {
   border-top: 2px solid #dadada;
   border-bottom: 2px solid #dadada;
 }
+section.full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: calc(100vh - 45px);
+}
 section.skills ul.inline-list, section.skills section.portfolio ul.project-list, section.portfolio section.skills ul.project-list {
   display: flex;
   align-items: center;
@@ -3106,13 +3113,6 @@ section.portfolio ul.project-list li a:hover img {
 section.portfolio ul.project-list li img {
   border-radius: 100%;
   box-shadow: 0 0 5px #cdcdcd;
-}
-section.contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: calc(100vh - 45px);
 }
 section.contact a {
   text-decoration: none;

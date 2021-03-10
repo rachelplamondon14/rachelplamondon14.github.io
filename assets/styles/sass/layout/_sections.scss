@@ -18,6 +18,11 @@ section {
     border-top: 2px solid #dadada;
     border-bottom: 2px solid #dadada;
   }
+
+	&.full-screen {
+		@include flex(center, center, column);
+		min-height: calc(100vh - 45px);
+	}
   
   &.skills {
     @extend .text-center;
@@ -77,8 +82,6 @@ section {
   &.contact {
     @extend .fs-sm-xl;
     @extend .text-center;
-		@include flex(center, center, column);
-		height: calc(100vh - 45px);
 
     a {
       text-decoration: none;
