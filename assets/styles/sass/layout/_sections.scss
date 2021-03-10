@@ -82,6 +82,10 @@ section {
   &.contact {
     @extend .fs-sm-xl;
     @extend .text-center;
+		background-image: url('../../images/miska-silhouette-with-paws.png');
+		background-repeat: no-repeat;
+		background-position: 95% 100%;
+		background-size: contain;
 
     a {
       text-decoration: none;

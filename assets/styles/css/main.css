@@ -3039,7 +3039,7 @@ ul.inline-list, section.portfolio ul.project-list {
   flex-wrap: wrap;
 }
 #header nav#menu ul li.active a:after {
-  background-color: #dfb32c;
+  background-color: #DEB22C;
   width: 100%;
 }
 #header nav#menu ul li a {
@@ -3119,6 +3119,12 @@ section.portfolio ul.project-list li a:hover img {
 section.portfolio ul.project-list li img {
   border-radius: 100%;
   box-shadow: 0 0 5px #cdcdcd;
+}
+section.contact {
+  background-image: url("../../images/miska-silhouette-with-paws.png");
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+  background-size: contain;
 }
 section.contact a {
   text-decoration: none;
