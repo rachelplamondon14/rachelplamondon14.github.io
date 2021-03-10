@@ -3100,7 +3100,17 @@ section.portfolio ul.project-list {
 }
 section.portfolio ul.project-list li {
   border-radius: 100%;
-  flex-basis: 18%;
+  flex-basis: 44%;
+}
+@media only screen and (min-width: 425px) {
+  section.portfolio ul.project-list li {
+    flex-basis: 30%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  section.portfolio ul.project-list li {
+    flex-basis: 18%;
+  }
 }
 section.portfolio ul.project-list li a {
   color: inherit;
